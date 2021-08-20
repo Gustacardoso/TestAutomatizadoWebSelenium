@@ -16,6 +16,8 @@ public class Adicionar  extends BasePage {
     }
     ElementConta elementConta = new ElementConta(driver);
 
+
+
     public void setBotaoContas(){
         elementConta.getBotaoConta().click();
     }
@@ -27,13 +29,13 @@ public class Adicionar  extends BasePage {
     }
 
     public void setValidMensagemErro(){
-        WebElement texto = elementConta.getValideMensagemSemNome();
-        texto.equals("Informe o nome da conta");
+        WebElement textoErro = elementConta.getValideMensagemSemNome();
+        textoErro.equals("Informe o nome da conta");
     }
 
     public void setValidMensagemSucess(){
-        WebElement texto = elementConta.getValideMensagemsucess();
-        texto.equals("Conta adicionada com sucesso");
+        WebElement textoSucess = elementConta.getValideMensagemsucess();
+        textoSucess.equals("Conta adicionada com sucesso");
     }
 
     public void setCampoNome(){
@@ -53,7 +55,14 @@ public class Adicionar  extends BasePage {
         elementConta.getCampoNome().clear();
     }
     public void setValidMensagemEditarSucess(){
-        WebElement texto = elementConta.getValideMensagemsucess();
-        texto.equals("Conta alterada com sucesso!");
+        WebElement textoSucess = elementConta.getValideMensagemsucess();
+        textoSucess.equals("Conta alterada com sucesso!");
+    }
+    public void setBotaoDeletar(){
+        elementConta.getBotaoDeletar().click();
+    }
+    public void setValidMensagemDeletar(){
+        WebElement textoSucess = elementConta.getValideMensagemsucess();
+        textoSucess.equals("Conta removida com sucesso!");
     }
 }

@@ -17,4 +17,24 @@ public class TesteAdicionar {
     public void adicionarSemNome(){
         login.LoginSucesso();
     }
+    @Test
+    public void MensagemSucessDeletar(){
+        login.LoginSucesso();
+        this.adicionar.setBotaoContas();
+        this.adicionar.setBotaoLista();
+        this.adicionar.setBotaoDeletar();
+        this.adicionar.setValidMensagemDeletar();
+    }
+    @Test
+    public void AlteracaoDeConta(){
+        login.LoginSucesso();
+        this.adicionar.setBotaoContas();
+        this.adicionar.setBotaoLista();
+        this.adicionar.setEditarConta();
+        this.adicionar.setApagarCampoNome();
+        this.adicionar.setCampoNome();
+        this.adicionar.setbotaoSalvar();
+        this.adicionar.setValidMensagemEditarSucess();
+
+    }
 }

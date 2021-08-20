@@ -15,12 +15,12 @@ public class TestLogin {
     Adicionar adicionar = new Adicionar(driver);
 
     @Test
-    public void LoginSucess(){
+    public void LoginSucesso(){
        login.LoginSucesso();
     }
     @Test
     public void adicionarSemNome(){
-        LoginSucess();
+        LoginSucesso();
         this.adicionar.setBotaoContas();
         this.adicionar.setBotaoAdicionar();
         this.adicionar.setbotaoSalvar();
@@ -29,7 +29,7 @@ public class TestLogin {
 
     @Test
     public void ContaCriadaComSucesso(){
-        LoginSucess();
+        LoginSucesso();
         this.adicionar.setBotaoContas();
         this.adicionar.setBotaoAdicionar();
         this.adicionar.setCampoNome();
@@ -39,24 +39,17 @@ public class TestLogin {
 
     @Test
     public void listaContasCadastradas(){
-        LoginSucess();
+        LoginSucesso();
         this.adicionar.setBotaoContas();
         this.adicionar.setBotaoLista();
     }
 
-    @Test
-    public void AlteracaoDeConta(){
-        listaContasCadastradas();
-        this.adicionar.setEditarConta();
-        this.adicionar.setApagarCampoNome();
-        this.adicionar.setCampoNome();
-        this.adicionar.setbotaoSalvar();
-        this.adicionar.setValidMensagemEditarSucess();
 
-    }
     @Test
     public void ContaRemovida(){
         listaContasCadastradas();
+        //FALTOU O BOTAO
+        this.adicionar.setValidMensagemDeletar();
 
     }
 

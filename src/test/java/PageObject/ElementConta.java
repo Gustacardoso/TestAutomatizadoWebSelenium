@@ -32,6 +32,9 @@ public class ElementConta extends BasePage {
     public WebElement getBotaoLista(){
         return driver.findElement(By.cssSelector("#navbar > ul > li.dropdown.open > ul > li:nth-child(2) > a"));
     }
+    public WebElement getBotaoDeletar(){
+        return driver.findElement(By.cssSelector("#tabelaContas > tbody > tr:nth-child(1) > td:nth-child(2) > a:nth-child(2) > span"));
+    }
 
     public WebElement getEditarConta(){
         return driver.findElement(By.cssSelector("#tabelaContas > tbody > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1) > span"));

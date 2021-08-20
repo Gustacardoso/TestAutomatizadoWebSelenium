@@ -20,13 +20,15 @@ public class Login extends BasePage {
         elementoLogin.getSenha().sendKeys("123456");
     }
 
-    public void clickButton(){
+    public void clickEntrar(){
         elementoLogin.getButton().click();
     }
 
    public void LoginSucesso(){
         setEmail();
         setSenha();
-        clickButton();
+       clickEntrar();
    }
+
+
 }
