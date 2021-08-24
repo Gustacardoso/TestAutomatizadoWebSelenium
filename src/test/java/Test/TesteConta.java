@@ -15,6 +15,7 @@ public class TesteConta {
 
     LoginPage loginPage = new LoginPage(driver);
     ContaPage contaPage = new ContaPage(driver);
+
     Faker faker = new Faker(new Locale("pt","Br"));
     String nomeFaker = faker.name().firstName();
     @Test
@@ -46,6 +47,7 @@ public class TesteConta {
        contaPage.setBotaoContas();
        contaPage.setBotaoLista();
        contaPage.setEditarConta();
+       contaPage.setApagarCampoNome();
        contaPage.setCampoNome(nomeFaker);
        contaPage.setbotaoSalvar();
        contaPage.setValidMensagemEditarSucess();
@@ -58,7 +60,4 @@ public class TesteConta {
        contaPage.setBotaoDeletar();
        contaPage.setValidMensagemDeletar();
    }
-
-
-
 }

@@ -11,7 +11,5 @@ public class LoginLocalizador extends BasePage {
     public By email = By.id("email");
     public By senha = By.id("senha");
     public By botaoEntrar = By.cssSelector("body > div.jumbotron.col-lg-4 > form > button");
-
-
-
+    public By ValidacaoLogin = By.cssSelector("body > div.alert.alert-success");
 }

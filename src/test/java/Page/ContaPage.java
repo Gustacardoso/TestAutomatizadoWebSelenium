@@ -2,12 +2,8 @@ package Page;
 
 import Localizador.ContaLocalizador;
 import Utils.BasePage;
-import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
-import java.util.Locale;
-
 public class ContaPage extends BasePage {
 
     ContaLocalizador contaLocalizador = new ContaLocalizador(driver);
@@ -27,22 +23,18 @@ public class ContaPage extends BasePage {
         WebElement textoErro = driver.findElement(contaLocalizador.validarMensagemErro);
         textoErro.equals("Informe o nome da conta");
     }
-
     public void setValidMensagemSucess(){
         WebElement textoSucess = driver.findElement(contaLocalizador.validarMensagemSucess);
         textoSucess.equals("Conta adicionada com sucesso");
     }
-
     public void setCampoNome(String nome){
         driver.findElement(contaLocalizador.CampoNome).sendKeys(nome);
     }
-
     public void setBotaoLista(){
         driver.findElement(contaLocalizador.BotaoListar).click();
     }
-
     public void setEditarConta(){
-        driver.findElement(contaLocalizador.EditarConta);
+        driver.findElement(contaLocalizador.EditarConta).click();
     }
     public void setApagarCampoNome(){
         driver.findElement(contaLocalizador.CampoNome).clear();
