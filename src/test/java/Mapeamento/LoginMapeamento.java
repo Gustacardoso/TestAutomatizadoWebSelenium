@@ -1,11 +1,12 @@
-package Localizador;
+package Mapeamento;
 
 import Utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginLocalizador extends BasePage {
-    public LoginLocalizador(WebDriver driver) {
+public class LoginMapeamento extends BasePage {
+
+    public LoginMapeamento(WebDriver driver) {
         super(driver);
     }
     public By email = By.id("email");

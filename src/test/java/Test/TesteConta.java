@@ -1,9 +1,11 @@
 package Test;
 
-import Page.ContaPage;
-import Page.LoginPage;
+import interacao.ContaInteracao;
+import interacao.LoginInteração;
 import Utils.WebDriverUtil;
 import com.github.javafaker.Faker;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
@@ -11,39 +13,45 @@ import java.util.Locale;
 
 public class TesteConta {
 
-    public static WebDriver driver = WebDriverUtil.openBrowser();
+    public  WebDriver driver = WebDriverUtil.openBrowser();
 
-    LoginPage loginPage = new LoginPage(driver);
-    ContaPage contaPage = new ContaPage(driver);
+    LoginInteração loginPage = new LoginInteração(driver);
+    ContaInteracao contaPage = new ContaInteracao(driver);
 
     Faker faker = new Faker(new Locale("pt","Br"));
     String nomeFaker = faker.name().firstName();
+
+    @Before
+    public void iniciar(){
+        loginPage.loginSucess();
+    }
+
+    @After
+    public void fecharNavegador() {
+        driver.quit();
+    }
     @Test
     public void adicionarSemNome(){
-        loginPage.loginSucess();
-        contaPage.setBotaoContas();
-        contaPage.setBotaoAdicionar();
-        contaPage.setbotaoSalvar();
-        contaPage.setValidMensagemSemNome();
+        this.contaPage.setBotaoContas();
+        this.contaPage.setBotaoAdicionar();
+        this.contaPage.setbotaoSalvar();
+        this.contaPage.setValidMensagemSemNome();
     }
    @Test
    public void MensagemContaSucesso(){
-        loginPage.loginSucess();
-        contaPage.setBotaoContas();
-        contaPage.setBotaoAdicionar();
-        contaPage.setCampoNome(nomeFaker);
-        contaPage.setbotaoSalvar();
-        contaPage.setValidMensagemSucess();
+       this.contaPage.setBotaoContas();
+       this.contaPage.setBotaoAdicionar();
+       this.contaPage.setCampoNome(nomeFaker);
+       this.contaPage.setbotaoSalvar();
+       this.contaPage.setValidMensagemSucess();
    }
    @Test
    public void ListaConta(){
-       loginPage.loginSucess();
        contaPage.setBotaoContas();
        contaPage.setBotaoLista();
    }
    @Test
    public void MensagemAlteracaoConta(){
-       loginPage.loginSucess();
        contaPage.setBotaoContas();
        contaPage.setBotaoLista();
        contaPage.setEditarConta();
@@ -54,7 +62,6 @@ public class TesteConta {
    }
    @Test
    public void MensagemRemovidaConta(){
-       loginPage.loginSucess();
        contaPage.setBotaoContas();
        contaPage.setBotaoLista();
        contaPage.setBotaoDeletar();

@@ -1,14 +1,15 @@
-package Page;
-import Localizador.LoginLocalizador;
+package interacao;
+import Mapeamento.LoginMapeamento;
 import Utils.BasePage;
+import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class LoginPage extends BasePage {
+public class LoginInteração extends BasePage {
 
-    LoginLocalizador loginLocalizador = new LoginLocalizador(driver);
+    LoginMapeamento loginLocalizador = new LoginMapeamento(driver);
 
-    public LoginPage(WebDriver driver) {
+    public LoginInteração(WebDriver driver) {
         super(driver);
     }
 
@@ -22,13 +23,10 @@ public class LoginPage extends BasePage {
     public void setclickEntrar(){
         driver.findElement(loginLocalizador.botaoEntrar).click();
     }
-    public  void setValidacaoLogin(String validacao){
-        WebElement texto = driver.findElement(loginLocalizador.ValidacaoLogin);
-        texto.equals(validacao);
-    }
+
 
     public void loginSucess(){
-        setEmail("gusta_tamy@hotmail.com");
+        setEmail("Chiplim@hotmail.com");
         setSenha("123456");
         setclickEntrar();
    }

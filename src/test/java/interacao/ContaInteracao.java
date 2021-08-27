@@ -1,13 +1,13 @@
-package Page;
+package interacao;
 
-import Localizador.ContaLocalizador;
+import Mapeamento.ContaMapeamento;
 import Utils.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-public class ContaPage extends BasePage {
+public class ContaInteracao extends BasePage {
 
-    ContaLocalizador contaLocalizador = new ContaLocalizador(driver);
-    public ContaPage(WebDriver driver) {
+    ContaMapeamento contaLocalizador = new ContaMapeamento(driver);
+    public ContaInteracao(WebDriver driver) {
         super(driver);
     }
     public void setBotaoContas(){

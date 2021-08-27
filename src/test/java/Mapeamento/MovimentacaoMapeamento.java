@@ -1,11 +1,11 @@
-package Localizador;
+package Mapeamento;
 
 import Utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class Movimentacao extends BasePage {
-    public Movimentacao(WebDriver driver) {
+public class MovimentacaoMapeamento extends BasePage {
+    public MovimentacaoMapeamento(WebDriver driver) {
         super(driver);
     }
 

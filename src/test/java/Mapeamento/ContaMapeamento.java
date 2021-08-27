@@ -1,10 +1,10 @@
-package Localizador;
+package Mapeamento;
 
 import Utils.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class ContaLocalizador extends BasePage {
+public class ContaMapeamento extends BasePage {
 
     public By BotaoConta =  By.className("dropdown");
     public By BotaoAdicionar = By.xpath("//*[@id=\"navbar\"]/ul/li[2]/ul/li[1]");
@@ -16,7 +16,7 @@ public class ContaLocalizador extends BasePage {
     public By BotaoDeletar = By.cssSelector("#tabelaContas > tbody > tr:nth-child(1) > td:nth-child(2) > a:nth-child(2) > span");
     public By EditarConta = By.cssSelector("#tabelaContas > tbody > tr:nth-child(1) > td:nth-child(2) > a:nth-child(1) > span");
 
-    public ContaLocalizador(WebDriver driver) {
+    public ContaMapeamento(WebDriver driver) {
         super(driver);
     }
 }
